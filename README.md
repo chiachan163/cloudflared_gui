@@ -1,6 +1,6 @@
 # CLOUDFLARED_GUI
 
-本工具是基于cloudflared，实现公网IP远程访问局域网的方式。
+本工具是基于cloudflared，实现无公网IP远程访问局域网的方式。
 工具依赖于cloudflared，自行安装
  https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.msi
 
