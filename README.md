@@ -1,21 +1,24 @@
 # CLOUDFLARED_GUI
 
+## cloudflared操作（待补充）
 
-## mac环境编辑
+## windows下编译
 
-安装 mingw 工具链（交叉编译 Windows GUI 必须要有）：
+1. 安装mingw64
+https://github.com/niXman/mingw-builds-binaries/releases
 
+解压后，把目录/bin添加到PATH环境变量
+
+2. 安装fyne
+go install fyne.io/tools/cmd/fyne@latest
+
+3. 检查环境（这一步可选）
+https://geoffrey-artefacts.fynelabs.com/github/andydotxyz/fyne-io/setup/latest/
+
+下载这个工具检查
+
+4. 编译
 ```
-brew install mingw-w64
+mkdir releases
+fyne package -os windows -icon Icon.png
 ```
-然后编译时加上 CC 环境变量，让 Go 用 Windows 的 gcc：
-
-```
-# 64位
-GOOS=windows GOARCH=amd64 CC=x86_64-w64-mingw32-gcc go build -o releases/cloudflared_gui.exe 
-# 32位
-GOOS=windows GOARCH=386 CC=x86_64-w64-mingw32-gcc go build -o cloudflared_gui_32.exe cloudflared_gui.go
-
-```
-这样会正确选中 Windows 的 OpenGL 代码。
-
